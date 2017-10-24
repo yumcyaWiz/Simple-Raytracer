@@ -58,15 +58,15 @@ Vector3 operator*(float k, const Vector3& v) {
 
 
 //長さを１に正規化したベクトルを返す
-Vector3 normalize(const Vector3& v) {
+inline Vector3 normalize(const Vector3& v) {
     return Vector3(v.x, v.y, v.z)/v.length();
 }
 //内積を計算する
-float dot(const Vector3& v1, const Vector3& v2) {
+inline float dot(const Vector3& v1, const Vector3& v2) {
     return v1.x*v2.x + v1.y*v2.y + v1.z*v2.z;
 }
 //外積を計算する
-Vector3 cross(const Vector3& v1, const Vector3& v2) {
+inline Vector3 cross(const Vector3& v1, const Vector3& v2) {
     return Vector3(v1.y*v2.z - v1.z*v2.y, v1.z*v2.x - v1.x*v2.z, v1.x*v2.y - v1.y*v2.x);
 }
 std::ostream& operator<<(std::ostream& stream, const Vector3& v) {
