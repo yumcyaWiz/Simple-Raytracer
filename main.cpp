@@ -106,7 +106,7 @@ class Image {
         };
         
         //ファイル名を受け取り、ppm画像として出力する
-        void ppm_output(std::string filename) {
+        void ppm_output(std::string filename) const {
             std::ofstream file(filename);
             file << "P3" << std::endl;
             file << width << " " << height << std::endl;
