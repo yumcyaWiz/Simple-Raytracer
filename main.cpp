@@ -233,9 +233,9 @@ int main() {
             //カメラから対応する画素のレイを取得する
             Ray ray = cam.getRay(u, v);
             Hit res;
-            //衝突したら白色にする。
+            //衝突したら法線で色付けをする
             if(sphere.intersect(ray, res)) {
-                img.set(i, j, Vector3(1));
+                img.set(i, j, (res.hitNormal + 1)/2);
             }
             else {
                 img.set(i, j, Vector3(0));
