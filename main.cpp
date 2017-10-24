@@ -219,14 +219,14 @@ int main() {
     Image img(512, 512);
 
     //カメラの初期化
-    Camera cam(Vector3(0, 0, 0), Vector3(0, 0, 1));
+    Camera cam(Vector3(0, 0, 0), Vector3(0, 0, -1));
 
     //球を用意する
-    Sphere sphere(Vector3(0, 0, 3), 1.0f);
+    Sphere sphere(Vector3(0, 0, -3), 1.0f);
 
     //画素一つ一つに対して次の計算を行う
-    for(int i = 0; i < img.width; i++) {
-        for(int j = 0; j < img.height; j++) {
+    for(int i = 0; i < img.height; i++) {
+        for(int j = 0; j < img.width; j++) {
             //(u, v)はイメージセンサー上で真ん中を原点とし、(-1, -1) ~ (1, 1)の値を取る
             float u = (2.0*i - img.height)/img.height;
             float v = (2.0*j - img.width)/img.width;
