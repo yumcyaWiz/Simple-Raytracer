@@ -172,7 +172,7 @@ class Sphere {
 
             //近い方の衝突距離を返す
             float t0 = (-b - std::sqrt(D))/(2*a);
-            float t1 = (-b + std::sqrt(D))/(2+a);
+            float t1 = (-b + std::sqrt(D))/(2*a);
             if(t0 > ray.tmax || t1 < ray.tmin)
                 return false;
             float t = t0;
@@ -228,8 +228,8 @@ int main() {
     for(int i = 0; i < img.height; i++) {
         for(int j = 0; j < img.width; j++) {
             //(u, v)はイメージセンサー上で真ん中を原点とし、(-1, -1) ~ (1, 1)の値を取る
-            float u = (2.0*i - img.height)/img.height;
-            float v = (2.0*j - img.width)/img.width;
+            float u = (2.0*j - img.height)/img.height;
+            float v = (2.0*i - img.width)/img.width;
             //カメラから対応する画素のレイを取得する
             Ray ray = cam.getRay(u, v);
             Hit res;
